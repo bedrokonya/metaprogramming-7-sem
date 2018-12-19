@@ -13,12 +13,12 @@ void Pattern<pattern_type::PROXY>::action() {
 }
 
 // MEDIATOR
-void Pattern<pattern_type::MEDIATOR>::addObject(std::string hash, IService* object) {
+void Pattern<pattern_type::MEDIATOR>::addObject(const std::string &hash, IService* object) {
     std::cout << "MEDIATOR added object B: " << object << " for hash: " << hash << std::endl;
     _pool[hash] = object;
 }
 
-void Pattern<pattern_type::MEDIATOR>::notify(std::string hash) {
+void Pattern<pattern_type::MEDIATOR>::notify(const std::string &hash) {
     
     std::cout << "MEDIATOR is trying to find approriate object B for object A" << std::endl;
     IService* object = _pool[hash];
@@ -31,7 +31,7 @@ void Pattern<pattern_type::MEDIATOR>::notify(std::string hash) {
     }
 }
 
-void Pattern<pattern_type::MEDIATOR>::remove_object(std::string hash) {
+void Pattern<pattern_type::MEDIATOR>::remove_object(const std::string &hash) {
     _pool.erase(hash);
 }
 

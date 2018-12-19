@@ -35,9 +35,9 @@ class Pattern<pattern_type::MEDIATOR> : public IMediator {
     std::unordered_map<std::string, IService*> _pool;
 
 public:
-    void addObject(std::string hash, IService* object);
-    void notify(std::string hash);
-    void remove_object(std::string hash);
+    void addObject(const std::string &hash, IService* object);
+    void notify(const std::string &hash);
+    void remove_object(const std::string &hash);
 };
 
 

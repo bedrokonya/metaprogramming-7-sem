@@ -24,9 +24,9 @@ class IMediator {
 public:
     virtual ~IMediator() {};
     
-    virtual void addObject(std::string hash, IService* object) = 0;
-    virtual void notify(std::string hash) = 0;
-    virtual void remove_object(std::string hash) = 0;
+    virtual void addObject(const std::string &hash, IService* object) = 0;
+    virtual void notify(const std::string &hash) = 0;
+    virtual void remove_object(const std::string &hash) = 0;
 };
 
 // используется для работы с MEDIATOR
